@@ -52,6 +52,7 @@ class HeadHunterParser:
             })
         return filtered_vacancies
 
+
 # hh = HeadHunterParser()
 # """Проверка вывода отфильтрованных работодателей по id"""
 # print(hh.get_response())

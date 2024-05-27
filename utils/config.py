@@ -5,7 +5,8 @@
 from configparser import ConfigParser
 
 
-def config(filename="database.ini", section="postgresql"):
+def config(filename="C:/Users/User/Documents/Python/SkyPro/TermPaper_5_SQL+API/database.ini",
+           section="postgresql"):
     # create a parser
     parser = ConfigParser()
     # read config file

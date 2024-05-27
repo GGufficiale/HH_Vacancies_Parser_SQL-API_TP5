@@ -20,4 +20,3 @@ class DBManager:
         query = "SELECT * FROM vacancies " \
                 "JOIN employers ON vacancies.employer = employers.id"
         return self.execute_query(query)
-
