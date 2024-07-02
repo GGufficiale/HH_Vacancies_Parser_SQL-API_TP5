@@ -1,8 +1,9 @@
-# USER = "postgres"
-# PASSWORD = "Sosatvsemyptu107"
-# HOST = "localhost"
-# PORT = "5432"
 from configparser import ConfigParser
+
+host = "localhost",
+database = "postgres",
+user = "postgres",
+password = "10203040"
 
 
 def config(filename="C:/Users/User/Documents/Python/SkyPro/TermPaper_5_SQL+API/database.ini",

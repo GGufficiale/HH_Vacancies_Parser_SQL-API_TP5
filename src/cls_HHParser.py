@@ -5,19 +5,24 @@ class HeadHunterParser:
     """Класс для работы с НН API"""
 
     @staticmethod
-    def __get_response():
+    def get_response():
         """Запрос на НН API и возврат списка работодателей"""
         params = {"sort_by": "by_vacancies_open", "per_page": 10}
         response = requests.get("https://api.hh.ru/employers", params=params)
         if response.status_code == 200:
+            # Если статус-код - 200, то всё ок, запрос проходит
             return response.json()["items"]
 
     def get_employers(self) -> list:
-        data = self.__get_response()
+        """Выбор 10 интересующих компаний"""
+        data = self.get_response()
+        # loved_employers = ['Пятёрочка', 'Магнит']
         employers = []
         for employer in data:
+            # if employer["name"] in loved_employers:
+            #     loved_employers.append({"id": employer["id"], "name": employer["name"]})
             employers.append({"id": employer["id"], "name": employer["name"]})
-        return employers
+        return employers #loved_employers[2:]
 
     def get_vacancies(self) -> list:
         """Получение вакансий в формате json"""
@@ -53,12 +58,12 @@ class HeadHunterParser:
         return filtered_vacancies
 
 
-# hh = HeadHunterParser()
+hh = HeadHunterParser()
 # """Проверка вывода отфильтрованных работодателей по id"""
 # print(hh.get_response())
 
-# """Проверка вывода инфо о работодателе в формате id + name"""
-# print(hh.get_employers())
+"""Проверка вывода инфо о работодателе в формате id + name"""
+print(hh.get_employers())
 
 # """Проверка вывода инфо о вакансиях в выбранном нами формате"""
 # print(hh.get_vacancies())
