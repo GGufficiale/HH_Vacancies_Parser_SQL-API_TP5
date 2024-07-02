@@ -1,7 +1,7 @@
-# USER = ""
-# PASSWORD = ""
-# HOST = ""
-# PORT = ""
+# USER = "postgres"
+# PASSWORD = "Sosatvsemyptu107"
+# HOST = "localhost"
+# PORT = "5432"
 from configparser import ConfigParser
 
 

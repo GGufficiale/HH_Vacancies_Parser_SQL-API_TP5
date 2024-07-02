@@ -1,5 +1,5 @@
 import psycopg2
-from config import config
+from utils.config import config
 from src.cls_HHParser import HeadHunterParser
 
 
