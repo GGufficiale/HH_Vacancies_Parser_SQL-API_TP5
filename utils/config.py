@@ -1,12 +1,7 @@
 from configparser import ConfigParser
 
-host = "localhost",
-database = "postgres",
-user = "postgres",
-password = "10203040"
 
-
-def config(filename="C:/Users/User/Documents/Python/SkyPro/TermPaper_5_SQL+API/database.ini",
+def config(filename="database.ini",
            section="postgresql"):
     # create a parser
     parser = ConfigParser()

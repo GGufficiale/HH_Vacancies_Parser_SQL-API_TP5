@@ -1,12 +1,12 @@
 import psycopg2
-from config import config
+from utils.config import config
 from src.cls_HHParser import HeadHunterParser
 
 
 def create_database(db_name):
-    """Метод для создания таблицы"""
+    """Метод для создания базы данных"""
     con = psycopg2.connect(dbname="postgres", **config())
-    con.autocommit = True
+    con.autocommit = True  # коммит для переноса добавленной инфы в пгадмин4 в по-другому (вместо con.commit())
     cur = con.cursor()
     cur.execute(f"DROP DATABASE IF EXISTS {db_name}")
     cur.execute(f"CREATE DATABASE {db_name}")
@@ -43,4 +43,6 @@ def insert_data_in_tables(db_name):
     con.close()
 
 
-insert_data_in_tables("course_work")
+# create_database("termpaper")
+# create_tables("termpaper")
+# insert_data_in_tables("termpaper")
