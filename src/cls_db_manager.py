@@ -19,9 +19,9 @@ class DBManager:
 
     def get_companies_and_vacancies_count(self):
         """Метод получает список всех компаний и количество вакансий у каждой компании"""
-        query = "SELECT employers.name, COUNT(employers.name) FROM vacancies" \
-                "JOIN employers ON vacancies.employer = employers.id" \
-                "GROUP BY employers.name"
+        query = ("SELECT employers.name, COUNT(employers.name) FROM vacancies "
+                 "JOIN employers ON vacancies.employer = employers.id "
+                 "GROUP BY employers.name")
         return self.execute_query(query)
 
     def get_all_vacancies(self):

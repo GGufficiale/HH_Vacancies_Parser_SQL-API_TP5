@@ -7,7 +7,7 @@ create_tables(db_name)
 insert_data_in_tables(db_name)
 
 db = DBManager("termpaper")
-print("Привет, юзер! Раз ты здесь, то тебе нужно найти работу мечты :) "
+print("Привет, юзер! Раз ты здесь, то ты точно найдешь работу мечты :) "
       "Смотри, какие компании есть в нашей базе данных:")
 print(db.get_companies_and_vacancies_count())
 
